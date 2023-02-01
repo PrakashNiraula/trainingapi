@@ -10,10 +10,12 @@ var traningtypesrouter=require('./routes/traning_type');
 var documenttypesrouter=require('./routes/document_type');
 var traineerouter=require('./routes/trainee');
 var uploadrouter=require('./routes/upload');
+var cors=require('cors');
 
 
 
 var app = express();
+app.use(cors,'*');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
