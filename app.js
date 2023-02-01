@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var traningtypesrouter=require('./routes/traning_type');
 var documenttypesrouter=require('./routes/document_type');
 var traineerouter=require('./routes/trainee');
+var uploadrouter=require('./routes/upload');
 
 
 
@@ -29,6 +30,7 @@ app.use('/users', usersRouter);
 app.use('/traning_types',traningtypesrouter);
 app.use('/document_types',documenttypesrouter);
 app.use('/trainee',traineerouter);
+app.use('/upload',uploadrouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
