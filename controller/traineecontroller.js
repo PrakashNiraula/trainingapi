@@ -9,7 +9,7 @@ db.getalltrainee=async()=>{
         
     return new Promise((resolve,reject)=>{
         
-        conn.query("select t.id,d.doc_type, t.name,t.phone,tp.type,t.created_on from trainee t, document_type d, training_type tp where t.doc_type=d.id and t.traning_type=tp.id",(error,res)=>{
+        conn.query("select t.id,d.doc_type, t.name,t.phone,tp.type,t.created_on,t.dob,t.address,t.fathers_name,t.voucher_id,t.doc_image,t.profile_image from trainee t, document_type d, training_type tp where t.doc_type=d.id and t.traning_type=tp.id",(error,res)=>{
             if(error){
                 return reject(error);
             }
