@@ -22,11 +22,11 @@ db.getalltrainee=async()=>{
 }
 
 
-db.createtrainee=async(document_type,name,phone,traning_type,doc_no,dob,address,fathers_name,voucher_id)=>{
+db.createtrainee=async(document_type,name,phone,traning_type,doc_no,dob,address,fathers_name,voucher_id,doc_image,profile_image)=>{
         
     return new Promise((resolve,reject)=>{
         
-        conn.query("INSERT INTO `trainee` (`id`, `doc_type`, `name`, `phone`, `traning_type`, `doc_number`, `created_on`,`dob`,`address`,`fathers_name`,`voucher_id`) VALUES (NULL,?,?,?,?,?, CURRENT_TIMESTAMP,?,?,?,?);",[document_type,name,phone,traning_type,doc_no,dob,address,fathers_name,voucher_id],(error,res)=>{
+        conn.query("INSERT INTO `trainee` (`id`, `doc_type`, `name`, `phone`, `traning_type`, `doc_number`, `created_on`,`dob`,`address`,`fathers_name`,`voucher_id`,`doc_image`,`profile_image`) VALUES (NULL,?,?,?,?,?, CURRENT_TIMESTAMP,?,?,?,?,?,?);",[document_type,name,phone,traning_type,doc_no,dob,address,fathers_name,voucher_id,doc_image,profile_image],(error,res)=>{
             if(error){
                 return reject(error);
             }
