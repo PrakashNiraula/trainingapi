@@ -38,6 +38,36 @@ db.createtrainee=async(document_type,name,phone,traning_type,doc_no,dob,address,
 }
 
 
+db.gettraineebyid=async(id)=>{
+    return new Promise((resolve,reject)=>{
+        
+        conn.query("select t.id,d.doc_type, t.name,t.phone,tp.type,t.created_on,t.dob,t.address,t.fathers_name,t.voucher_id,t.doc_image,t.profile_image from trainee t, document_type d, training_type tp where t.doc_type=d.id and t.traning_type=tp.id and t.id=?",[id],(error,res)=>{
+            if(error){
+                return reject(error);
+            }
+            return resolve(res)
+        })
+    
+    
+    })
+
+}
+
+db.deletetraineebyid=async(id)=>{
+    return new Promise((resolve,reject)=>{
+        
+        conn.query("delete from trainee where id=?",[id],(error,res)=>{
+            if(error){
+                return reject(error);
+            }
+            return resolve(res)
+        })
+    
+    
+    })
+
+}
+
 
 
 module.exports=db;

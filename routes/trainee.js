@@ -27,4 +27,28 @@ try{
     
 })
 
+
+router.route('/:id')
+.get(async( req,res,next)=>{
+    try{
+        
+        res.json(await trainee_controller.gettraineebyid(req.params.id));
+
+    }catch(err){
+        next(err);
+    }
+
+})
+
+.delete(async(req,res,next)=>{
+    try{
+        
+        res.json(await trainee_controller.deletetraineebyid(req.params.id));
+
+    }catch(err){
+        next(err);
+    }
+
+
+})
 module.exports=router;
