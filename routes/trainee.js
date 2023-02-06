@@ -18,8 +18,9 @@ try{
 .post(async(req,res,next)=>{
   
     try{
+        console.log(req.body);
         
-        res.json(await trainee_controller.createtrainee(req.body.document_type,req.body.name,req.body.phone,req.body.traning_type,req.body.document_number,req.body.dob,req.body.address,req.body.fathers_name,req.body.voucher_id,req.body.doc_iamge,req.body.profile_image));
+        res.json(await trainee_controller.createtrainee(req.body.document_type,req.body.name,req.body.phone,req.body.traning_type,req.body.document_number,req.body.dob,req.body.address,req.body.fathers_name,req.body.voucher_id,req.body.doc_image,req.body.profile_image));
 
     }catch(err){
         next(err);
